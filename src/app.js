@@ -14,11 +14,18 @@ app.get("/api/v1/products",(req,res)=>{
    if(products.length > 0)
    {
     console.log(products);
-    res.status(200).json(products);
+    res.status(200).json({
+        "status": "success",
+        "message": "Product fetched successfully",
+        "data": {
+            products
+        }
+    });
    }else
    {
-    res.status(404).json({"message": "Product not found"})
+    res.status(404).json({message: "Product not found"})
    }
+
 })
 
 module.exports = app;
