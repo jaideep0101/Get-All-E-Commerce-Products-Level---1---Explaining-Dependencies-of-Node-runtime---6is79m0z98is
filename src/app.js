@@ -17,7 +17,7 @@ app.get("/api/v1/products",(req,res)=>{
     res.status(200).json(products);
    }else
    {
-    res.status(404).json({message: "Product not found"})
+    res.status(404).json({"message": "Product not found"})
    }
 })
 
